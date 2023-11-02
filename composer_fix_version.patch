@@ -1,0 +1,36 @@
+diff --git a/vendor/composer/composer/src/Composer/Repository/ArrayRepository.php b/vendor/composer/composer/src/Composer/Repository/ArrayRepository.php
+index b0d8443..87f22e7 100644
+--- a/vendor/composer/composer/src/Composer/Repository/ArrayRepository.php
++++ b/vendor/composer/composer/src/Composer/Repository/ArrayRepository.php
+@@ -274,6 +274,7 @@ class ArrayRepository implements RepositoryInterface
+      *
+      * @return int Number of packages
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         if (null === $this->packages) {
+diff --git a/vendor/composer/composer/src/Composer/Repository/CompositeRepository.php b/vendor/composer/composer/src/Composer/Repository/CompositeRepository.php
+index 53d1fa9..ac1f2e1 100644
+--- a/vendor/composer/composer/src/Composer/Repository/CompositeRepository.php
++++ b/vendor/composer/composer/src/Composer/Repository/CompositeRepository.php
+@@ -177,6 +177,7 @@ class CompositeRepository implements RepositoryInterface
+     /**
+      * {@inheritdoc}
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         $total = 0;
+diff --git a/vendor/composer/composer/src/Composer/Repository/FilterRepository.php b/vendor/composer/composer/src/Composer/Repository/FilterRepository.php
+index 361c2fe..2926e8c 100644
+--- a/vendor/composer/composer/src/Composer/Repository/FilterRepository.php
++++ b/vendor/composer/composer/src/Composer/Repository/FilterRepository.php
+@@ -185,6 +185,7 @@ class FilterRepository implements RepositoryInterface
+     /**
+      * {@inheritdoc}
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         if ($this->repo->count() > 0) {
